@@ -67,3 +67,20 @@ input {
   flex-direction: column;
   margin-top: 3%;
 }
+
+/*Media Queries*/
+@media screen and (max-width: 500px) {
+
+  input {
+    width: 80%;
+  }
+
+  .body-input {
+    height: 70px;
+  /*NEED TO FIGURE OUT LINE BREAK/TEXT WRAP!!!!!!!!*/
+  }
+
+  .save-button {
+    width: 83%;
+  }
+};
