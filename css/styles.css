@@ -29,7 +29,7 @@ input {
   width: 50%;
   height: 25px;
   border: 2px solid #D1D3D4;
-  color: #D1D3D4;
+  color: #6D6E71;
   font-size: 17px;
   margin: 7px 0;
   padding: 5px;
@@ -66,6 +66,42 @@ input {
   align-items: center;
   flex-direction: column;
   margin-top: 3%;
+}
+
+.buttons {
+  color: transparent;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  border: none;
+}
+
+.buttons:focus {
+  outline: none;
+}
+
+.delete-button {
+  background: url(../images/delete.svg) no-repeat;
+}
+
+.delete-button:hover {
+  background: url(../images/delete-hover.svg) no-repeat;
+}
+
+.up-vote {
+  background: url(../images/upvote.svg) no-repeat;
+}
+
+.up-vote:hover {
+  background: url(../images/upvote-hover.svg) no-repeat;
+}
+
+.down-vote {
+  background: url(../images/downvote.svg) no-repeat;
+}
+
+.down-vote:hover {
+  background: url(../images/downvote-hover.svg) no-repeat;
 }
 
 /*Media Queries*/

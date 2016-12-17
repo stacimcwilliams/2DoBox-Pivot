@@ -3,7 +3,10 @@ function append(idea) {
   var $ideaBody = $('.body-input').val()
   $('.bottom-container').append(
     `<li class='idea-title'>${$ideaTitle}</li>
+    <button class='delete-button buttons'>delete</button>
     <li class='idea-body'>${$ideaBody}</li>
+    <button class='up-vote buttons'>up</button>
+    <button class='down-vote buttons'>down</button>
     `
   )}
 
