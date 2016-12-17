@@ -104,6 +104,33 @@ input {
   background: url(../images/downvote-hover.svg) no-repeat;
 }
 
+.bottom-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.idea-title {
+  color: #6D6E71;
+  font: 700 25px 'Roboto Slab', serif;
+}
+
+.idea-body {
+  color: #939598;
+  font: 400 20px 'Open Sans', sans-serif;
+}
+
+li {
+  list-style-type: none;
+  margin-top: 20px;
+}
+
+.buttons {
+  display: inline-flex;
+}
+
+
 /*Media Queries*/
 @media screen and (max-width: 500px) {
 
