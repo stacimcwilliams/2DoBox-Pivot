@@ -6,9 +6,19 @@ body {
   font: 400 20px 'Open Sans', sans-serif;
 }
 
-h1 {
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3%;
+}
+
+.logo-name {
   color: #00A79D;
   font: 700 40px 'Roboto', sans-serif;
+  margin-bottom: 2%;
 }
 
 span {
@@ -17,15 +27,30 @@ span {
 
 #input-field {
   width: 50%;
-  height: 20px;
+  height: 25px;
   border: 2px solid #939598;
   color: #939598;
+  margin: 7px 0;
+  padding: 2px;
+}
+
+#input-field:focus {
+  outline: none;
 }
 
 .save-button {
   background-color: #00A79D;
+  border: none;
+  box-shadow: none;
   color: #fff;
+  margin-top: 7px;
+  width: 50.6%;
+  height: 29px;
+  font-size: 15px;
+}
 
+.save-button:focus {
+  outline: none;
 }
 
 .save-button:hover {
