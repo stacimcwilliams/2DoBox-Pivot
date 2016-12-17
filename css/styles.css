@@ -1,23 +1,23 @@
 body {
   position: fixed;
-  background-color: #E5F3F2;
   width: 100%;
   height: 40%;
-  font: 400 20px 'Open Sans', sans-serif;
+  font: 400 'Open Sans', sans-serif;
 }
 
 .main-container {
+  background-color: #E5F3F2;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 3%;
+  padding: 3% 0;
 }
 
 .logo-name {
   color: #00A79D;
-  font: 700 40px 'Roboto', sans-serif;
+  font: 700 40px 'Roboto Slab', serif;
   margin-bottom: 2%;
 }
 
@@ -25,16 +25,17 @@ span {
   color: #6D6E71;
 }
 
-#input-field {
+input {
   width: 50%;
   height: 25px;
-  border: 2px solid #939598;
-  color: #939598;
+  border: 2px solid #D1D3D4;
+  color: #D1D3D4;
+  font-size: 17px;
   margin: 7px 0;
-  padding: 2px;
+  padding: 5px;
 }
 
-#input-field:focus {
+input {
   outline: none;
 }
 
@@ -44,9 +45,9 @@ span {
   box-shadow: none;
   color: #fff;
   margin-top: 7px;
-  width: 50.6%;
-  height: 29px;
-  font-size: 15px;
+  width: 51%;
+  height: 37px;
+  font-size: 17px;
 }
 
 .save-button:focus {
@@ -55,4 +56,14 @@ span {
 
 .save-button:hover {
   background-color: #045E55;
+}
+
+.bottom-container {
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3%;
 }
