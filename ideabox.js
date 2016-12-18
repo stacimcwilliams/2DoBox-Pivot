@@ -1,25 +1,29 @@
 function append(idea) {
-  var $ideaTitle = $('.title-input').val()
-  var $ideaBody = $('.body-input').val()
-  $('.bottom-container').append(
-    `<li class='idea-title'>${$ideaTitle}</li>
+  $('ul').prepend(
+    `<li class='idea-title'>${idea.title}</li>
     <button class='delete-button buttons'>delete</button>
-    <li class='idea-body'>${$ideaBody}</li>
+    <li class='idea-body'>${idea.body}</li>
     <button class='up-vote buttons'>up</button>
     <button class='down-vote buttons'>down</button>
-    <hr>
     `
   )}
 
-function idea (title, body) {
+function Idea (title, body) {
   this.title = title
   this.body = body
   this.id = Date.now()
   this.quality = 'swill'
 }
 
+function grabIdea () {
+  var title = $('.title-input').val()
+  var body = $('.body-input').val()
+  var idea = new Idea(title, body)
+  append(idea)
+}
+
 $('.save-button').on('click', function() {
-  append()
+  grabIdea()
   clearFields()
 })
 

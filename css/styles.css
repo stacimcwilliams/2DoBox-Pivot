@@ -30,9 +30,10 @@ input {
   padding: 5px;
 }
 
-input {
+input:focus {
   outline: none;
 }
+
 
 .save-button {
   background-color: #00A79D;
@@ -112,15 +113,6 @@ input {
 li {
   list-style-type: none;
   margin-top: 20px;
-}
-
-div {
-  overflow: auto;
-}
-
-hr {
-  border-bottom: 2px solid blue;
-  width: 50%;
 }
 
 .buttons {
