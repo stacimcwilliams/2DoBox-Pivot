@@ -7,13 +7,16 @@ function append(idea) {
     <li class='idea-body'>${$ideaBody}</li>
     <button class='up-vote buttons'>up</button>
     <button class='down-vote buttons'>down</button>
+    <hr>
     `
   )}
 
-  // function idea (title, body) {
-  //   this.title = title
-  //   this.body = body
-  // }
+function idea (title, body) {
+  this.title = title
+  this.body = body
+  this.id = Date.now()
+  this.quality = 'swill'
+}
 
 $('.save-button').on('click', function() {
   append()
