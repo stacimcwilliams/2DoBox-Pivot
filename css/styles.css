@@ -78,6 +78,7 @@ input:focus {
 
 .delete-button {
   background: url(../images/delete.svg) no-repeat;
+  float: right;
 }
 
 .delete-button:hover {
