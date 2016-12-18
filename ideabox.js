@@ -1,8 +1,8 @@
 function append(idea) {
   $('ul').prepend(
-    `<li class='idea-title'>${idea.title}</li>
+    `<li class='idea-title' contenteditable>${idea.title}</li>
     <button class='delete-button buttons'>delete</button>
-    <li class='idea-body'>${idea.body}</li>
+    <li class='idea-body' contenteditable>${idea.body}</li>
     <button class='up-vote buttons'>up</button>
     <button class='down-vote buttons'>down</button>
     `
@@ -20,6 +20,7 @@ function grabIdea () {
   var body = $('.body-input').val()
   var idea = new Idea(title, body)
   append(idea)
+  console.log(idea)
 }
 
 $('.save-button').on('click', function() {
