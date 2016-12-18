@@ -123,6 +123,11 @@ li:focus {
   display: inline-flex;
 }
 
+div {
+  width: 50%;
+}
+
+
 
 /*Media Queries*/
 @media screen and (max-width: 500px) {
