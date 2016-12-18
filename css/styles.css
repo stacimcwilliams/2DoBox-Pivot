@@ -115,6 +115,10 @@ li {
   margin-top: 20px;
 }
 
+li:focus {
+  outline: none;
+}
+
 .buttons {
   display: inline-flex;
 }
