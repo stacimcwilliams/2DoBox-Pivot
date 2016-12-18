@@ -78,6 +78,7 @@ input:focus {
 
 .delete-button {
   background: url(../images/delete.svg) no-repeat;
+  float: right;
 }
 
 .delete-button:hover {
@@ -123,6 +124,11 @@ li:focus {
   display: inline-flex;
 }
 
+div {
+  width: 50%;
+}
+
+
 
 /*Media Queries*/
 @media screen and (max-width: 500px) {
@@ -138,5 +144,9 @@ li:focus {
 
   .save-button {
     width: 83%;
+  }
+
+  div {
+    width: 80%;
   }
 };
