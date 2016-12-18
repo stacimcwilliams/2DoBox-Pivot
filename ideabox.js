@@ -1,14 +1,12 @@
 function append(idea) {
   $('ul').prepend(
-    `
-    <section class="idea-section">
-    <li class='idea-title' contenteditable>${idea.title}</li>
-    <button class='delete-button buttons'>delete</button>
-    <li class='idea-body' contenteditable>${idea.body}</li>
-    <button class='up-vote buttons'>up</button>
-    <button class='down-vote buttons'>down</button>
-    </section>
-    `
+    `<section class="idea-section">
+      <li class='idea-title' contenteditable>${idea.title}</li>
+      <button class='delete-button buttons'>delete</button>
+      <li class='idea-body' contenteditable>${idea.body}</li>
+      <button class='up-vote buttons'>up</button>
+      <button class='down-vote buttons'>down</button>
+    </section>`
   )}
 
 function Idea (title, body) {
