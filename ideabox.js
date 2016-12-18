@@ -6,6 +6,7 @@ function append(idea) {
       <li class='idea-body' contenteditable>${idea.body}</li>
       <button class='up-vote buttons'>up</button>
       <button class='down-vote buttons'>down</button>
+      <p>quality: ${idea.quality}</p>
     </section>`
   )}
 
@@ -37,5 +38,19 @@ function clearFields() {
 
 $('.bottom-container').on('click', '.delete-button', function (e){
   $(e.target).closest('.idea-section').remove();
-  console.log('hey');
 });
+
+function upVote(quality) {
+  switch(quality) {
+    case 'swill':
+      return 'plausible'
+    case 'plausible':
+      return 'genius'
+    default: 'genius'
+  }
+}
+
+$('.bottom-container').on('click', '.up-vote', function (e) {
+  $(e.target).closest('.idea-section').upVote(idea)
+  console.log('hello')
+})
