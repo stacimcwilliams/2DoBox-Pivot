@@ -52,4 +52,4 @@ function upVote(quality) {
 
 $('.bottom-container').on('click', '.up-vote', function(e) {
   $(e.target).closest('.idea-section').upVote(quality)
-})
+}

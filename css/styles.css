@@ -108,7 +108,7 @@ input:focus {
 
 .idea-body {
   color: #939598;
-  font: 400 20px 'Open Sans', sans-serif;
+  font-size: 20px;
 }
 
 li {
@@ -126,6 +126,24 @@ li:focus {
 
 div {
   width: 50%;
+}
+
+.idea-section {
+  border-bottom: 2px solid #D1D3D4;
+  font: 400 'Open Sans', sans-serif;
+  padding: 10px;
+}
+
+p {
+  margin: 8px;
+  display: inline-block;
+  padding: 10px 0;
+  color: #6D6E71;
+  font-size: 15px;
+}
+
+.down-vote {
+  margin: 0px 10px;
 }
 
 
