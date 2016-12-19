@@ -108,7 +108,8 @@ input:focus {
 
 .idea-body {
   color: #939598;
-  font-size: 20px;
+  font: 400 20px 'Open Sans', sans-serif;
+
 }
 
 li {
@@ -130,7 +131,6 @@ div {
 
 .idea-section {
   border-bottom: 2px solid #D1D3D4;
-  font: 400 'Open Sans', sans-serif;
   padding: 10px;
 }
 
@@ -139,7 +139,11 @@ p {
   display: inline-block;
   padding: 10px 0;
   color: #6D6E71;
-  font-size: 15px;
+  font: 700 15px 'Roboto Slab', serif;
+}
+
+.quality {
+  font: 400 15px 'Open Sans', sans-serif;
 }
 
 .down-vote {
