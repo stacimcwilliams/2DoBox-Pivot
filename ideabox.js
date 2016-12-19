@@ -58,8 +58,40 @@ function upVote(quality) {
   }
 }
 
+function downVote(quality) {
+  switch(quality) {
+    case 'genius':
+      return 'plausible'
+    case 'plausible':
+      return 'swill'
+    default:
+      return 'swill'
+  }
+}
 
 
+
+$('.bottom-container').on('click', '.up-vote', function() {
+ var $getUpQuality = $(this).closest('.idea-section').find('.quality')
+ var getUpQualityText = $getUpQuality.text()
+ var newUpQuality = upVote(getUpQualityText)
+
+
+ var saveUpQuality = $getUpQuality.text(newUpQuality)
+
+
+})
+
+$('.bottom-container').on('click', '.down-vote', function() {
+ var $getDownQuality = $(this).closest('.idea-section').find('.quality')
+ var getDownQualityText = $getDownQuality.text()
+ var newDownQuality = downVote(getDownQualityText)
+
+
+ var saveDownQuality = $getDownQuality.text(newDownQuality)
+
+
+})
 
 
 
