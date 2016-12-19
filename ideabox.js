@@ -22,7 +22,7 @@ function grabIdea () {
   var body = $('.body-input').val()
   var idea = new Idea(title, body)
   append(idea)
-  console.log(idea)
+  console.log(idea);
 }
 
 $('.save-button').on('click', function() {
@@ -35,7 +35,6 @@ function clearFields() {
   $('.body-input').val('')
 }
 
-
 $('.bottom-container').on('click', '.delete-button', function (e){
   $(e.target).closest('.idea-section').remove();
 });
@@ -46,11 +45,11 @@ function upVote(quality) {
       return 'plausible'
     case 'plausible':
       return 'genius'
-    default: 'genius'
+    default:
+      return 'genius'
   }
 }
 
-$('.bottom-container').on('click', '.up-vote', function (e) {
-  $(e.target).closest('.idea-section').upVote(idea)
-  console.log('hello')
+$('.bottom-container').on('click', '.up-vote', function(e) {
+  $(e.target).closest('.idea-section').upVote(quality)
 })
