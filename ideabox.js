@@ -43,8 +43,12 @@ function clearFields() {
   $('.body-input').val('')
 }
 
-$('.bottom-container').on('click', '.delete-button', function (e){
-  $(e.target).closest('.idea-section').remove();
+$('.bottom-container').on('click', '.delete-button', function (){
+  $(this).closest('.idea-section').remove();
+  var idKey = $(this).closest('.idea-section').attr('id');
+  console.log(idKey)
+  localStorage.removeItem(idKey);
+
 });
 
 function upVote(quality) {
