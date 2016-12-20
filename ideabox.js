@@ -4,6 +4,27 @@ $(document).ready(function() {
   }
 })
 
+$('.save-button').on('click', function() {
+  grabIdea()
+  clearFields()
+})
+
+function Idea (title, body) {
+  this.title = title
+  this.body = body
+  this.id = Date.now()
+  this.quality = 'swill'
+}
+
+function grabIdea () {
+  var title = $('.title-input').val()
+  var body = $('.body-input').val()
+  var idea = new Idea(title, body)
+  localStorage.setItem(idea.id, JSON.stringify(idea))
+  append(idea)
+  console.log(idea);
+}
+
 function append(idea) {
   $('ul').prepend(
     `<section id=${idea.id} class="idea-section">
@@ -16,32 +37,12 @@ function append(idea) {
     </section>`
   )}
 
-function Idea (title, body) {
-  this.title = title
-  this.body = body
-  this.id = Date.now()
-  this.quality = 'swill'
-}
-
-
-function grabIdea () {
-  var title = $('.title-input').val()
-  var body = $('.body-input').val()
-  var idea = new Idea(title, body)
-  localStorage.setItem(idea.id, JSON.stringify(idea))
-  append(idea)
-  console.log(idea);
-}
-
-$('.save-button').on('click', function() {
-  grabIdea()
-  clearFields()
-})
 
 function clearFields() {
   $('.title-input').val('')
   $('.body-input').val('')
 }
+
 
 $('.bottom-container').on('click', '.delete-button', function (){
   $(this).closest('.idea-section').remove();
@@ -72,8 +73,6 @@ function downVote(quality) {
       return 'swill'
   }
 }
-
-
 
 $('.bottom-container').on('click', '.up-vote', function() {
  var $getUpQuality = $(this).closest('.idea-section').find('.quality')
@@ -114,9 +113,6 @@ $('.bottom-container').on('blur', '.idea-body', function() {
   storedObj.body = getIdeaBodyText
   localStorage.setItem(id, JSON.stringify(storedObj))
 })
-
-
-
 
 var searchInput = $('.search-field');
 
