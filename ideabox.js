@@ -79,9 +79,12 @@ $('.bottom-container').on('click', '.up-vote', function() {
  var $getUpQuality = $(this).closest('.idea-section').find('.quality')
  var getUpQualityText = $getUpQuality.text()
  var newUpQuality = upVote(getUpQualityText)
+ var id = $(this).closest('.idea-section').prop("id");
+ var storedObj = JSON.parse(localStorage.getItem(id));
+$getUpQuality.text(newUpQuality);
+ storedObj.quality = newUpQuality;
+ localStorage.setItem(id, JSON.stringify(storedObj));
 
-
- var saveUpQuality = $getUpQuality.text(newUpQuality)
 
 
 })
@@ -90,9 +93,13 @@ $('.bottom-container').on('click', '.down-vote', function() {
  var $getDownQuality = $(this).closest('.idea-section').find('.quality')
  var getDownQualityText = $getDownQuality.text()
  var newDownQuality = downVote(getDownQualityText)
+ $getDownQuality.text(newDownQuality)
+ var id = $(this).closest('.idea-section').prop("id");
+ var storedObj = JSON.parse(localStorage.getItem(id));
+ $getDownQuality.text(newDownQuality);
+ storedObj.quality = newDownQuality;
+ localStorage.setItem(id, JSON.stringify(storedObj));
 
-
- var saveDownQuality = $getDownQuality.text(newDownQuality)
 
 
 })
