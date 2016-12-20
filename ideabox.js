@@ -8,6 +8,7 @@ $(document).ready(function() {
 $('.save-button').on('click', function() {
   grabIdea()
   clearFields()
+  disableSaveButton()
 })
 
 function Idea (title, body) {
@@ -144,8 +145,8 @@ $('.title-input, .body-input').on('keyup', function() {
   var title = $('.title-input').val()
   var body = $('.body-input').val()
     if(title.length > 0 && body.length > 0) {
-      disableSaveButton()
-    } else  {
       enableSaveButton()
+    } else  {
+      disableSaveButton()
     }
 })
