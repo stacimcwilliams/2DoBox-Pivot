@@ -2,6 +2,7 @@ $(document).ready(function() {
   for(var i = 0; i < localStorage.length; i++){
     append(JSON.parse(localStorage.getItem(localStorage.key(i))))
   }
+  clearFields()
 })
 
 $('.save-button').on('click', function() {
@@ -123,8 +124,28 @@ $('.search-field').on('keyup', function(){
   })
 });
 
-$('save-button').prop('disabled',function() {
-  if ($('.idea-title').val('') || $('.idea-body').val('')) {
-    $('save-button').prop('disabled', false)
-  }
+// $('.field')on('keyup', function() {
+//  if ($('.title-input').val('') || $('.body-input').val('')) {
+//    $('.save-button').prop("disabled", false);
+//  } else {
+//    $('.save-button').prop("disabled", true);
+//  }
+// });
+
+function disableSaveButton() {
+  $('.save-button').prop("disabled", true)
+}
+
+function enableSaveButton(){
+  $('.save-button').prop("disabled", false)
+}
+
+$('.title-input, .body-input').on('keyup', function() {
+  var title = $('.title-input').val()
+  var body = $('.body-input').val()
+    if(title.length > 0 && body.length > 0) {
+      disableSaveButton()
+    } else  {
+      enableSaveButton()
+    }
 })
