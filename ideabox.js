@@ -2,6 +2,7 @@ $(document).ready(function() {
   for(var i = 0; i < localStorage.length; i++){
     append(JSON.parse(localStorage.getItem(localStorage.key(i))))
   }
+  clearFields()
 })
 
 $('.save-button').on('click', function() {
@@ -114,13 +115,37 @@ $('.bottom-container').on('blur', '.idea-body', function() {
   localStorage.setItem(id, JSON.stringify(storedObj))
 })
 
-var searchInput = $('.search-field');
-
-searchInput.on('keyup', function(){
+$('.search-field').on('keyup', function(){
   var searchTerm = $(this).val().toLowerCase();
-  $('li').each(function (index, element) {
-    var text = $(element).text().toLowerCase();
+  $('li').each(function (index, theObject) {
+    var text = $(theObject).text().toLowerCase();
     var match = !!text.match(searchTerm);
     $(this).parent().toggle(match);
   })
 });
+
+// $('.field')on('keyup', function() {
+//  if ($('.title-input').val('') || $('.body-input').val('')) {
+//    $('.save-button').prop("disabled", false);
+//  } else {
+//    $('.save-button').prop("disabled", true);
+//  }
+// });
+
+function disableSaveButton() {
+  $('.save-button').prop("disabled", true)
+}
+
+function enableSaveButton(){
+  $('.save-button').prop("disabled", false)
+}
+
+$('.title-input, .body-input').on('keyup', function() {
+  var title = $('.title-input').val()
+  var body = $('.body-input').val()
+    if(title.length > 0 && body.length > 0) {
+      disableSaveButton()
+    } else  {
+      enableSaveButton()
+    }
+})
