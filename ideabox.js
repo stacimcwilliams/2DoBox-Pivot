@@ -117,48 +117,14 @@ $('.bottom-container').on('blur', '.idea-body', function() {
 
 
 
-$(document).ready(function(){
-  $('.search-field').keyup(function(){
-    $('li').each(function(){
-      if ($(this).text().search(new RegExp(filter, "i")) < 0) {
-               $(this).fadeOut();
-     } else {
-       $(this).show();
-     }
+
+var searchInput = $('.search-field');
+
+searchInput.on('keyup', function(){
+  var searchTerm = $(this).val().toLowerCase();
+  $('li').each(function (index, element) {
+    var text = $(element).text().toLowerCase();
+    var match = !!text.match(searchTerm);
+    $(this).parent().toggle(match);
   })
-})
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// $('.bottom-container').on('click', '.up-vote', function() {
-//   var $selector = $(this).closest(".idea-section").find(".quality");
-//   var quality = $selector.text();
-//   var id = $(this).closest(".idea-section").prop("id");
-//   var storedItem = JSON.parse(localStorage.getItem(id));
-//
-//   if($(this).text() === "up"){
-//     var newQuality = upVote(quality);
-//     storedItem.quality = newQuality;
-//     $selector.text(newQuality);
-//     localStorage.setItem(id, JSON.stringify(storedItem));
-//   } else {
-//     $selector.text(downVote(quality));
-//   }
-// })
+});
