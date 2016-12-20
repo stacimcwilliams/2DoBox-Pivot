@@ -81,27 +81,38 @@ $('.bottom-container').on('click', '.up-vote', function() {
  var newUpQuality = upVote(getUpQualityText)
  var id = $(this).closest('.idea-section').prop("id");
  var storedObj = JSON.parse(localStorage.getItem(id));
-$getUpQuality.text(newUpQuality);
+ $getUpQuality.text(newUpQuality);
  storedObj.quality = newUpQuality;
  localStorage.setItem(id, JSON.stringify(storedObj));
-
-
-
 })
 
 $('.bottom-container').on('click', '.down-vote', function() {
  var $getDownQuality = $(this).closest('.idea-section').find('.quality')
  var getDownQualityText = $getDownQuality.text()
  var newDownQuality = downVote(getDownQualityText)
- $getDownQuality.text(newDownQuality)
  var id = $(this).closest('.idea-section').prop("id");
  var storedObj = JSON.parse(localStorage.getItem(id));
  $getDownQuality.text(newDownQuality);
  storedObj.quality = newDownQuality;
  localStorage.setItem(id, JSON.stringify(storedObj));
+})
 
+$('.bottom-container').on('blur', '.idea-title', function() {
+  var getIdeaTitle = $(this).closest('.idea-section').find('.idea-title')
+  var getIdeaTitleText = getIdeaTitle.text()
+  var id = $(this).closest('.idea-section').prop('id')
+  var storedObj = JSON.parse(localStorage.getItem(id))
+  storedObj.title = getIdeaTitleText
+  localStorage.setItem(id, JSON.stringify(storedObj))
+})
 
-
+$('.bottom-container').on('blur', '.idea-body', function() {
+  var getIdeaBody = $(this).closest('.idea-section').find('.idea-body')
+  var getIdeaBodyText = getIdeaBody.text()
+  var id = $(this).closest('.idea-section').prop('id')
+  var storedObj = JSON.parse(localStorage.getItem(id))
+  storedObj.body = getIdeaBodyText
+  localStorage.setItem(id, JSON.stringify(storedObj))
 })
 
 
