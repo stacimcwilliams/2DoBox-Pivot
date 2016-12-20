@@ -51,7 +51,6 @@ $('.bottom-container').on('click', '.delete-button', function (){
   var idKey = $(this).closest('.idea-section').attr('id');
   console.log(idKey)
   localStorage.removeItem(idKey);
-
 });
 
 function upVote(quality) {
@@ -124,14 +123,6 @@ $('.search-field').on('keyup', function(){
     $(this).parent().toggle(match);
   })
 });
-
-// $('.field')on('keyup', function() {
-//  if ($('.title-input').val('') || $('.body-input').val('')) {
-//    $('.save-button').prop("disabled", false);
-//  } else {
-//    $('.save-button').prop("disabled", true);
-//  }
-// });
 
 function disableSaveButton() {
   $('.save-button').prop("disabled", true)
