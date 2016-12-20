@@ -117,6 +117,19 @@ $('.bottom-container').on('blur', '.idea-body', function() {
 
 
 
+$(document).ready(function(){
+  $('.search-field').keyup(function(){
+    $('li').each(function(){
+      if ($(this).text().search(new RegExp(filter, "i")) < 0) {
+               $(this).fadeOut();
+     } else {
+       $(this).show();
+     }
+  })
+})
+})
+
+
 
 
 
