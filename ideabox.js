@@ -4,6 +4,27 @@ $(document).ready(function() {
   }
 })
 
+$('.save-button').on('click', function() {
+  grabIdea()
+  clearFields()
+})
+
+function Idea (title, body) {
+  this.title = title
+  this.body = body
+  this.id = Date.now()
+  this.quality = 'swill'
+}
+
+function grabIdea () {
+  var title = $('.title-input').val()
+  var body = $('.body-input').val()
+  var idea = new Idea(title, body)
+  localStorage.setItem(idea.id, JSON.stringify(idea))
+  append(idea)
+  console.log(idea);
+}
+
 function append(idea) {
   $('ul').prepend(
     `<section id=${idea.id} class="idea-section">
@@ -16,32 +37,12 @@ function append(idea) {
     </section>`
   )}
 
-function Idea (title, body) {
-  this.title = title
-  this.body = body
-  this.id = Date.now()
-  this.quality = 'swill'
-}
-
-
-function grabIdea () {
-  var title = $('.title-input').val()
-  var body = $('.body-input').val()
-  var idea = new Idea(title, body)
-  localStorage.setItem(idea.id, JSON.stringify(idea))
-  append(idea)
-  console.log(idea);
-}
-
-$('.save-button').on('click', function() {
-  grabIdea()
-  clearFields()
-})
 
 function clearFields() {
   $('.title-input').val('')
   $('.body-input').val('')
 }
+
 
 $('.bottom-container').on('click', '.delete-button', function (){
   $(this).closest('.idea-section').remove();
@@ -72,8 +73,6 @@ function downVote(quality) {
       return 'swill'
   }
 }
-
-
 
 $('.bottom-container').on('click', '.up-vote', function() {
  var $getUpQuality = $(this).closest('.idea-section').find('.quality')
@@ -115,50 +114,13 @@ $('.bottom-container').on('blur', '.idea-body', function() {
   localStorage.setItem(id, JSON.stringify(storedObj))
 })
 
+var searchInput = $('.search-field');
 
-
-$(document).ready(function(){
-  $('.search-field').keyup(function(){
-    $('li').each(function(){
-      if ($(this).text().search(new RegExp(filter, "i")) < 0) {
-               $(this).fadeOut();
-     } else {
-       $(this).show();
-     }
+searchInput.on('keyup', function(){
+  var searchTerm = $(this).val().toLowerCase();
+  $('li').each(function (index, element) {
+    var text = $(element).text().toLowerCase();
+    var match = !!text.match(searchTerm);
+    $(this).parent().toggle(match);
   })
-})
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// $('.bottom-container').on('click', '.up-vote', function() {
-//   var $selector = $(this).closest(".idea-section").find(".quality");
-//   var quality = $selector.text();
-//   var id = $(this).closest(".idea-section").prop("id");
-//   var storedItem = JSON.parse(localStorage.getItem(id));
-//
-//   if($(this).text() === "up"){
-//     var newQuality = upVote(quality);
-//     storedItem.quality = newQuality;
-//     $selector.text(newQuality);
-//     localStorage.setItem(id, JSON.stringify(storedItem));
-//   } else {
-//     $selector.text(downVote(quality));
-//   }
-// })
+});
