@@ -1,19 +1,19 @@
+/*Main top container*/
 .main-container {
-  background-color: #E5F3F2;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  padding: 3% 0;
+  background-color: #E5F3F2;
   width: 100%;
   height: 40%;
-  padding: 3% 0;
+
 }
 
 .logo-name {
+  margin-bottom: 2%;
   color: #00A79D;
   font: 700 40px 'Roboto Slab', serif;
-  margin-bottom: 2%;
 }
 
 span {
@@ -21,28 +21,26 @@ span {
 }
 
 input {
-  width: 50%;
-  height: 25px;
   border: 2px solid #D1D3D4;
-  color: #6D6E71;
-  font-size: 17px;
   margin: 7px 0;
   padding: 5px;
+  width: 50%;
+  height: 25px;
+  color: #6D6E71;
+  font-size: 17px;
 }
 
 input:focus {
   outline: none;
 }
 
-
 .save-button {
-  background-color: #00A79D;
   border: none;
-  box-shadow: none;
-  color: #fff;
   margin-top: 7px;
   width: 51%;
   height: 37px;
+  background-color: #00A79D;
+  color: #fff;
   font-size: 17px;
 }
 
@@ -54,8 +52,8 @@ input:focus {
   background-color: #045E55;
 }
 
+/*Bottom Container*/
 .bottom-container {
-  background-color: #fff;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -64,12 +62,54 @@ input:focus {
   margin-top: 3%;
 }
 
+div {
+  width: 50%;
+}
+
+.idea-section {
+  border-bottom: 2px solid #D1D3D4;
+  padding: 10px;
+}
+
+.idea-title {
+  color: #6D6E71;
+  font: 700 25px 'Roboto Slab', serif;
+}
+
+.idea-body {
+  color: #939598;
+  font: 400 20px 'Open Sans', sans-serif;
+}
+
+li {
+  margin-top: 20px;
+}
+
+li:focus {
+  outline: none;
+}
+
+p {
+  display: inline-block;
+  margin: 8px;
+  padding: 10px 0;
+  color: #6D6E71;
+  font: 700 15px 'Roboto Slab', serif;
+}
+
+.quality {
+  font: 400 15px 'Open Sans', sans-serif;
+}
+
+
+/*Buttons in bottom container*/
 .buttons {
-  color: transparent;
-  background-color: transparent;
+  display: inline-flex;
+  border: none;
   width: 30px;
   height: 30px;
-  border: none;
+  color: transparent;
+  background-color: transparent;
 }
 
 .buttons:focus {
@@ -77,8 +117,9 @@ input:focus {
 }
 
 .delete-button {
-  background: url(../images/delete.svg) no-repeat;
   float: right;
+  margin-top: 20px;
+  background: url(../images/delete.svg) no-repeat;
 }
 
 .delete-button:hover {
@@ -94,6 +135,7 @@ input:focus {
 }
 
 .down-vote {
+  margin: 0px 10px;
   background: url(../images/downvote.svg) no-repeat;
 }
 
@@ -101,61 +143,14 @@ input:focus {
   background: url(../images/downvote-hover.svg) no-repeat;
 }
 
-.idea-title {
-  color: #6D6E71;
-  font: 700 25px 'Roboto Slab', serif;
-}
-
-.idea-body {
-  color: #939598;
-  font: 400 20px 'Open Sans', sans-serif;
-
-}
-
-li {
-  list-style-type: none;
-  margin-top: 20px;
-}
-
-li:focus {
-  outline: none;
-}
-
-.buttons {
-  display: inline-flex;
-}
-
-div {
-  width: 50%;
-}
-
-.idea-section {
-  border-bottom: 2px solid #D1D3D4;
-  padding: 10px;
-}
-
-p {
-  margin: 8px;
-  display: inline-block;
-  padding: 10px 0;
-  color: #6D6E71;
-  font: 700 15px 'Roboto Slab', serif;
-}
-
-.quality {
-  font: 400 15px 'Open Sans', sans-serif;
-}
-
-.down-vote {
-  margin: 0px 10px;
-}
-
-
-
 /*Media Queries*/
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
 
   input {
+    width: 80%;
+  }
+
+  div {
     width: 80%;
   }
 
@@ -166,9 +161,5 @@ p {
 
   .save-button {
     width: 83%;
-  }
-
-  div {
-    width: 80%;
   }
 };
