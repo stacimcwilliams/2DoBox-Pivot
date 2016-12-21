@@ -2,7 +2,6 @@ $(document).ready(function() {
   for(var i = 0; i < localStorage.length; i++){
     append(JSON.parse(localStorage.getItem(localStorage.key(i))))
   }
-  clearFields()
 })
 
 $('.save-button').on('click', function() {
