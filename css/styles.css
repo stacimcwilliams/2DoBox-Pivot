@@ -1,19 +1,17 @@
 .main-container {
-  background-color: #E5F3F2;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  width: 100%;
-  height: 40%;
+  align-items: center;
   padding: 3% 0;
+  background-color: #E5F3F2;
+  height: 40%;
+  width: 100%;
 }
 
 .logo-name {
+  margin-bottom: 2%;
   color: #00A79D;
   font: 700 40px 'Roboto Slab', serif;
-  margin-bottom: 2%;
 }
 
 span {
@@ -21,28 +19,27 @@ span {
 }
 
 input {
-  width: 50%;
-  height: 25px;
   border: 2px solid #D1D3D4;
-  color: #6D6E71;
-  font-size: 17px;
   margin: 7px 0;
   padding: 5px;
+  height: 25px;
+  width: 50%;
+  color: #6D6E71;
+  font-size: 17px;
+
 }
 
 input:focus {
   outline: none;
 }
 
-
 .save-button {
-  background-color: #00A79D;
   border: none;
-  box-shadow: none;
-  color: #fff;
   margin-top: 7px;
-  width: 51%;
   height: 37px;
+  width: 51%;
+  background-color: #00A79D;
+  color: #fff;
   font-size: 17px;
 }
 
@@ -55,7 +52,6 @@ input:focus {
 }
 
 .bottom-container {
-  background-color: #fff;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -65,11 +61,11 @@ input:focus {
 }
 
 .buttons {
+  border: none;
+  height: 30px;
+  width: 30px;
   color: transparent;
   background-color: transparent;
-  width: 30px;
-  height: 30px;
-  border: none;
 }
 
 .buttons:focus {
@@ -77,8 +73,9 @@ input:focus {
 }
 
 .delete-button {
-  background: url(../images/delete.svg) no-repeat;
   float: right;
+  margin-top: 20px;
+  background: url(../images/delete.svg) no-repeat;
 }
 
 .delete-button:hover {
@@ -109,11 +106,9 @@ input:focus {
 .idea-body {
   color: #939598;
   font: 400 20px 'Open Sans', sans-serif;
-
 }
 
 li {
-  list-style-type: none;
   margin-top: 20px;
 }
 
@@ -135,8 +130,8 @@ div {
 }
 
 p {
-  margin: 8px;
   display: inline-block;
+  margin: 8px;
   padding: 10px 0;
   color: #6D6E71;
   font: 700 15px 'Roboto Slab', serif;
@@ -159,6 +154,10 @@ p {
     width: 80%;
   }
 
+  div {
+    width: 80%;
+  }
+
   .body-input {
     height: 70px;
   /*NEED TO FIGURE OUT LINE BREAK/TEXT WRAP!!!!!!!!*/
@@ -166,9 +165,5 @@ p {
 
   .save-button {
     width: 83%;
-  }
-
-  div {
-    width: 80%;
   }
 };
