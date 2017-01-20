@@ -55,64 +55,92 @@ $('.bottom-container').on('click', '.delete-button', function (){
 function upVote(quality) {
   switch(quality) {
     case 'swill':
-      return 'plausible'
+      return 'plausible';
     case 'plausible':
-      return 'genius'
+      return 'genius';
     default:
-      return 'genius'
-  }
-}
+      return 'genius';
+  };
+};
 
 function downVote(quality) {
   switch(quality) {
     case 'genius':
-      return 'plausible'
+      return 'plausible';
     case 'plausible':
-      return 'swill'
+      return 'swill';
     default:
-      return 'swill'
-  }
-}
+      return 'swill';
+  };
+};
 
-$('.bottom-container').on('click', '.up-vote', function() {
- var $getUpQuality = $(this).closest('.idea-section').find('.quality')
- var getUpQualityText = $getUpQuality.text()
- var newUpQuality = upVote(getUpQualityText)
- var id = $(this).closest('.idea-section').prop("id");
- var storedObj = JSON.parse(localStorage.getItem(id));
- $getUpQuality.text(newUpQuality);
- storedObj.quality = newUpQuality;
- localStorage.setItem(id, JSON.stringify(storedObj));
-})
+function sortButtons(upVoteOrDownVote, quality){
+  if (upVoteOrDownVote === 'up-vote buttons'){
+    return upVote(quality);
+  } else {
+    return downVote(quality);
+  };
+};
 
-$('.bottom-container').on('click', '.down-vote', function() {
- var $getDownQuality = $(this).closest('.idea-section').find('.quality')
- var getDownQualityText = $getDownQuality.text()
- var newDownQuality = downVote(getDownQualityText)
- var id = $(this).closest('.idea-section').prop("id");
- var storedObj = JSON.parse(localStorage.getItem(id));
- $getDownQuality.text(newDownQuality);
- storedObj.quality = newDownQuality;
- localStorage.setItem(id, JSON.stringify(storedObj));
-})
-
-$('.bottom-container').on('blur', '.idea-title', function() {
-  var getIdeaTitle = $(this).closest('.idea-section').find('.idea-title')
-  var getIdeaTitleText = getIdeaTitle.text()
-  var id = $(this).closest('.idea-section').prop('id')
+$('.bottom-container').on('click', '.up-vote, .down-vote', function() {
+  var $getIdea = $(this).closest('.idea-section')
+  var id = $getIdea.prop('id')
+  var quality = $getIdea.find('.quality').text()
+  var upVoteOrDownVote = $(this).prop('class')
+  var newQuality = sortButtons(upVoteOrDownVote, quality)
+  $getIdea.find('.quality').text(newQuality)
   var storedObj = JSON.parse(localStorage.getItem(id))
-  storedObj.title = getIdeaTitleText
+  storedObj.quality = newQuality
   localStorage.setItem(id, JSON.stringify(storedObj))
 })
 
-$('.bottom-container').on('blur', '.idea-body', function() {
-  var getIdeaBody = $(this).closest('.idea-section').find('.idea-body')
-  var getIdeaBodyText = getIdeaBody.text()
-  var id = $(this).closest('.idea-section').prop('id')
-  var storedObj = JSON.parse(localStorage.getItem(id))
-  storedObj.body = getIdeaBodyText
-  localStorage.setItem(id, JSON.stringify(storedObj))
-})
+// $('.bottom-container').on('click', '.up-vote', function() {
+//  var $getUpQuality = $(this).closest('.idea-section').find('.quality')
+//  var getUpQualityText = $getUpQuality.text()
+//  var newUpQuality = upVote(getUpQualityText)
+//  var id = $(this).closest('.idea-section').prop("id");
+//  var storedObj = JSON.parse(localStorage.getItem(id));
+//  $getUpQuality.text(newUpQuality);
+//  storedObj.quality = newUpQuality;
+//  localStorage.setItem(id, JSON.stringify(storedObj));
+// })
+//
+// $('.bottom-container').on('click', '.down-vote', function() {
+//  var $getDownQuality = $(this).closest('.idea-section').find('.quality')
+//  var getDownQualityText = $getDownQuality.text()
+//  var newDownQuality = downVote(getDownQualityText)
+//  var id = $(this).closest('.idea-section').prop("id");
+//  var storedObj = JSON.parse(localStorage.getItem(id));
+//  $getDownQuality.text(newDownQuality);
+//  storedObj.quality = newDownQuality;
+//  localStorage.setItem(id, JSON.stringify(storedObj));
+// })
+
+$('.bottom-container').on('blur', '.idea-title, .idea-body', function(){
+  var id = $(this).closest('.idea-section').prop('id');
+  var idea = JSON.parse(localStorage.getItem(id));
+  idea.title = $(this).closest('.idea-section').find('.idea-title').text();
+  idea.body = $(this).closest('.idea-section').find('.idea-body').text();
+  localStorage.setItem(id, JSON.stringify(idea));
+});
+
+// $('.bottom-container').on('blur', '.idea-title', function() {
+//   var getIdeaTitle = $(this).closest('.idea-section').find('.idea-title')
+//   var getIdeaTitleText = getIdeaTitle.text()
+//   var id = $(this).closest('.idea-section').prop('id')
+//   var storedObj = JSON.parse(localStorage.getItem(id))
+//   storedObj.title = getIdeaTitleText
+//   localStorage.setItem(id, JSON.stringify(storedObj))
+// })
+//
+// $('.bottom-container').on('blur', '.idea-body', function() {
+//   var getIdeaBody = $(this).closest('.idea-section').find('.idea-body')
+//   var getIdeaBodyText = getIdeaBody.text()
+//   var id = $(this).closest('.idea-section').prop('id')
+//   var storedObj = JSON.parse(localStorage.getItem(id))
+//   storedObj.body = getIdeaBodyText
+//   localStorage.setItem(id, JSON.stringify(storedObj))
+// })
 
 $('.search-field').on('keyup', function(){
   var searchTerm = $(this).val().toLowerCase();

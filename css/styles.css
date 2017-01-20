@@ -16,6 +16,10 @@
   font: 700 40px 'Roboto Slab', serif;
 }
 
+textarea {
+  resize: none;
+}
+
 span {
   color: #6D6E71;
 }
