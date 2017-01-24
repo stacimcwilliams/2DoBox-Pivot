@@ -451,15 +451,15 @@
 /* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-	const assert = __webpack_require__(11).assert
+	'use strict';
+
+	var assert = __webpack_require__(11).assert;
 
 	describe('our test bundle', function () {
 	  it('should work', function () {
-	    assert(true)
-	    })
-	  })
-	  
-
+	    assert(true);
+	  });
+	});
 
 /***/ },
 /* 11 */
