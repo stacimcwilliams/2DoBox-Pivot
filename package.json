@@ -1,0 +1,35 @@
+{
+  "name": "2dobox-pivot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --hot --inline",
+    "build": "webpack",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/becs919/2DoBox-Pivot.git"
+  },
+  "author": "Becca and Staci",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/becs919/2DoBox-Pivot/issues"
+  },
+  "homepage": "https://github.com/becs919/2DoBox-Pivot#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "css-loader": "^0.26.1",
+    "mocha": "^3.2.0",
+    "mocha-loader": "^1.1.0",
+    "node-sass": "^4.3.0",
+    "sass-loader": "^4.1.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
